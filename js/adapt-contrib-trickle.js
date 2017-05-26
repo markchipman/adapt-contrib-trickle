@@ -302,7 +302,7 @@ define([
             var elementOffset = $element.offset();
             var elementBottomOffset = elementOffset.top + $element.outerHeight();
 
-            $('body, #pseudo-body').css("height", elementBottomOffset + "px");
+            $('body, .body').css("height", elementBottomOffset + "px");
         },
 
         showElements: function() {
@@ -422,7 +422,7 @@ define([
         endTrickle: function() {
             this._currentStepIndex = -1;
             this._isFinished = true;
-            $("body, #pseudo-body").css("height", "");
+            $("body, .body").css("height", "");
             $("html").removeClass("trickle");
             this._pageView = null;
             this.resizeBodyToCurrentIndex();
