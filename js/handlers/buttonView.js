@@ -270,6 +270,10 @@ define([
         },
 
         onButtonClick: function() {
+            if (this.model.getParent().getParent().get("_isComplete")) {
+                Backbone.history.navigate('#', {trigger:true});
+            }
+
             if (this.isStepLocked) {
                 Adapt.trigger("trickle:unwait");
                 this.isStepLocked = false;
